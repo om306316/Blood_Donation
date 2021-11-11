@@ -10,11 +10,11 @@ steps to run this website on your device.
 
 2.1->Till now you should be able to see login page and home page thats open to everyone .
 
-2.2->Now you need to set up you sql server on your device.
+2.2->Now you need to set up your sql server on your device.
 
-3->This project use my sql .So u need to known how to set up sql server in your system .
+3->This project uses mysql .So u need to known how to set up sql server in your system .
 
-4->In sql i used database = blood (database name)and it uses 1 table -> user (table name) .
+4->In sql I used database = blood (database name)and it uses 1 table -> user (table name) .
 
 4.1->user contains fields -> id,name,email,adhaar,password,profilepic,address,state,lat,log,blood,phone,willing (these are coloumns name).
 

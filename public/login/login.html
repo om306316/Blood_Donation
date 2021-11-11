@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Blood Donation</title>
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+   <!-- partial:index.partial.html -->
+   <div class="container">
+      <section id="formHolder">
+
+         <div class="row">
+
+            <!-- Brand Box -->
+            <div class="col-sm-6 brand">
+               <div class="heading">
+
+                  <h2>Blood</h2>
+                  <p>Donation</p>
+               </div>
+            </div>
+            <div class="col-sm-6 form">
+               <div class="login form-peice switched">
+                  <!-- login -->
+                  <form class="login-form" action="/login" method="post">
+                     <div class="form-group">
+                        <label for="loginemail">Email Adderss</label>
+                        <input type="email" name="loginemail" id="loginemail" required>
+                     </div>
+                     <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" name="loginPassword" id="loginPassword" required>
+                     </div>
+                     <div class="CTA">
+                        <button type="submit" value="Login" class="btn btn-danger" id="submit1">Login</button>
+                        <a href="#" class="switch">I'm New</a>
+                     </div>
+                  </form>
+               </div>
+               <!-- signup -->
+               <div class="signup form-peice " style="overflow:auto;">
+                  <form class="signup-form" id="FM" enctype="multipart/form-data" onSubmit="adddata()"
+                     name='registration'>
+
+                     <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" class="name">
+
+                        <label for="email">Email Adderss</label>
+                        <input type="email" name="email" id="email" class="email">
+
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="pass">
+
+                        <label for="Adhaar">Adhaar Card Number</label>
+                        <input type="text" name="adhaar" id="adhaar" class="aadhaar">
+
+                        <label for="Address">Address</label>
+                        <input type="text" name="address" id="address" class="address">
+                        <label for="State">State</label>
+                        <input type="text" name="state" id="state" class="state">
+                        <label for="blood">BloodGroup</Address></label>
+                        <input type="text" name="bloodgroup" id="bloodgroup" class="bloodgroup">
+                        <span class="error"></span>
+                        <br>
+                        <button onclick="getLocation()" style="margin-top: 15px;" type="button"
+                           class="btn btn-outline-primary">Add locatioin</button>
+                        <img id="output" width="30" />
+                        <label for="file" style="cursor: pointer;" style="all:unset; " type="button" id="addimage">Add
+                           Image</label>
+                        <i class="fas fa-cat"></i>
+                        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
+                              style="display:none"></p>
+
+                        <i class="far fa-clock"></i>
+                        <div class="CTA">
+                           <button type="submit" value="Signup Now" class="btn btn-danger" id="submit2">Submit</button>
+                           <a href="#" class="switch">I have an account</a>
+                           <br>
+                        </div>
+                  </form>
+                  <br>
+               </div>
+            </div>
+         </div>
+
+      </section>
+
+   </div>
+   <!-- partial -->
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+   <script src="./login.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+      var Form = document.getElementById("FM")
+      function getLocation() {
+         if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+         } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+         }
+      }
+
+      var formlat = new FormData(FM)
+
+      function showPosition(position) {
+         formlat.append("lat", position.coords.latitude);
+         formlat.append("log", position.coords.longitude);
+         console.log("lllllllllllllllllll")
+         //   console.log(formlat.getAll("emailAdress"))
+      }
+
+      var loadFile = function (event) {
+         var image = document.getElementById('output');
+         image.src = URL.createObjectURL(event.target.files[0]);
+      }
+
+      var resp;
+      var adddata = async () => {
+         var fm = document.getElementById("FM")
+         var formlat2 = new FormData(fm)
+         for (var [key, value] of formlat2.entries()) {
+            console.log(key, value);
+         }
+
+         console.log(formlat2.getAll("profilepic"))
+         formlat2.append("lat", formlat.getAll("lat"))
+         formlat2.append("log", formlat.getAll("log"))
+         await axios.post("/create", formlat2).then(res => resp = res).catch(e => { console.log(e) })
+         return true;
+      }
+
+
+
+
+   </script>
+
+</body>
+
+</html>

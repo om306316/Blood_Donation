@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DONOR DETAILES</title>
+  <link rel="stylesheet" href="form2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1>DONOR DETAILS</h1>
+  <section>
+    <div class="child">
+      <img src="blood_donate.jpeg" alt="Donate Blood">
+    </div>
+    <div class="child">
+      <form id="requestForm" class="row g-3">          
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Name</label>
+          <input id="personname" type="text" class="form-control">
+          <span id="username" class="text-danger font-weight-bold"></span>
+        </div>
+
+        <div class="col-md-2">
+          <label for="inputPassword4" class="form-label" >Age</label>
+          <input id="age" type="number" class="form-control"  >
+        </div>
+
+
+        <div class="col-md-2">
+          <label for="inputPassword4" class="form-label">Blood Grp</label>
+          <select id="bldgrp" class="form-select" required>
+            <option selected></option>
+            <option>B+ve</option>
+            <option>B-ve</option>
+            <option>A+ve</option>
+            <option>A-ve</option>
+            <option>O+ve</option>
+            <option>O-ve</option>
+            <option>AB+ve</option>
+            <option>AB-ve</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="requestCity" required>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <input type="text" class="form-control" id="state">
+        </div>
+        <div class="col-12">
+          <button  class="btn btn-primary" type="submit">Display</button>
+        </div>
+      </form>
+    </div> 
+
+ 
+
+  </section>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+  <script src="scripts/index1.js"></script>
+ 
+</body>
+
+</html>

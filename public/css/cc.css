@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Reem Kufi", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.about-section {
+  background: url(../assets/blood.jpg) no-repeat right;
+  background-size: 45%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.inner-container {
+  width: 55%;
+  float: left;
+  background-color: #fdfdfd;
+  padding: 100px;
+  padding-top: 0;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 13px;
+  color: #000000;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 1200px) {
+  .inner-container {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .about-section {
+    background-size: 100%;
+    padding: 80px 40px;
+  }
+  .inner-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    padding: 0;
+  }
+  .inner-container {
+    padding: 30px;
+  }
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  font-family: "Reem Kufi", sans-serif;
+  background-color: #ee3e3e;
+}
+.dropbtn {
+  background-color: #ee3e3e;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Reem Kufi";
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ee3e3e;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ec0303;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #ec0303;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.container h1 {
+  color: black;
+  text-align: center;
+}
+.container h6 {
+  color: black;
+}
+.container p {
+  color: black;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.box2 {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.image {
+  display: inline-block;
+  width: 30%;
+}
+.image img {
+  width: 137%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.content5 {
+  position: relative;
+  display: inline-block;
+  width: 498px;
+  margin-left: 161px;
+  bottom: 32px;
+}
+.row {
+  display: inline-block;
+  margin-left: 322px;
+}
+.col1 {
+  display: inline-block;
+  width: 200px;
+}
+.col2 {
+  display: inline-block;
+  width: 200px;
+}
+.col3 {
+  display: inline-block;
+  width: 200px;
+}
+.icon img {
+  margin-left: 65px;
+}
+h4 {
+  color: black;
+  text-align: center;
+}
+p {
+  color: black;
+  text-align: center;
+}

@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+ }
+h1{
+    color: red;
+    text-align: center;
+}
+.child
+ {
+   float:left;
+   width:50%;
+   color: red;
+   font-size: 18px;
+ }
+ img{
+     width: 700px;
+ }
+ 
+ form{
+     padding: 25px;
+ }
+
+ @media only screen and (max-width: 1358px){
+     img{
+        width: 880px;
+        align-items: center;
+        height: 500px;
+     }
+     .child{
+         width: auto;
+     }
+     h1{
+         /* align-items: center; */
+        text-align: center;
+     }
+ /* @media only screen and (max-width: 435px){
+     img{
+        width: 450px;
+        align-items: center;
+     }
+     .child{
+         width: auto;
+     }
+         */
+ }
+ 

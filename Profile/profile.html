@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="profile.css">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #f7edd5;
+        }
+        #details{
+            margin-bottom:10px ;
+        }
+        #change{
+            padding-bottom: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img id="pimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                            alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" />
+                        </div>
+                    </div>
+                </div>
+                <div id ="change" class="col-md-6">
+                    <div class="profile-head">
+                        <h5 id="name2">
+                            Om Prakash
+                        </h5>
+                        <h6 id="blood">
+                            Blood Group: O-
+                        </h6>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">History</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <h3>Your Location</h3>
+                        <iframe id="location"
+                        src = ""
+                            width="200" height="200" style="border:0;" rameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <a id="location2"
+    href="https://maps.google.com/maps?q='+data.lat+','+data.lon+'&hl=es;z=14&amp;output=embed" 
+    style="color:#0000FF;text-align:left" 
+    target="_blank"
+   >Location Here</a>
+                   
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div id="details" class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Full Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id ="name" >Om Prakash</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Aadhar Card No.</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id ="adhaar">4903 8776 5464</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="email">om306316@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="phone">+91 9465495212</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>State</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id ="state">Punjab</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Willing to donote status</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id ="willing">no</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>alert</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id ="location_alert_person_account">empty</p>
+                                </div>
+                            </div>
+                            
+                            <div id="blood_donate2"  class="btn btn-danger">Click and be a donor</div>
+                            
+                                <a href="/getdonor" class="btn btn-outline-danger">Get Blood Donor</a>
+                            
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="/profile.js"></script>
+</body>
+
+</html>
